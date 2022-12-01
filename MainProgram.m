@@ -1,4 +1,6 @@
-ipAddr = '192.168.0.100';
+InitializeArduinoConnection
+
+ipAddr = '192.168.4.20';
 portNo = 7000;
 
 % Clear everything that could conflict with establishing a UDP connection
@@ -17,6 +19,8 @@ packetSize = 92;
 % array from which the value of interest is extracted. Route the value of
 % interest and take the appropriate action.
 
+fprintf('Listening for data over UDP\n')
+
 while 1
     
     if uConn.NumBytesAvailable >= packetSize
@@ -28,7 +32,7 @@ while 1
         % the road offset position which can be used to determine how close
         % to the edge of the road is the user.
         
-        actionMapper(subjectState.state6, 1);
+        actionMapper(subjectState.state6, a);
 
     end
 

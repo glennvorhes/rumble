@@ -7,24 +7,32 @@ function actionMapper(lanePosition, a)
 
     if activateLeft
         
-        % This must turn ON the pins (or keep the pins ON) that activate
-        % the motors that simulate the left rumble strip.
+        % Turn on pins controlling motors on the left side.
 
-        disp('Left Rumblestrip');
+        fprintf('Vibration on Left Side\n');
+
+        writeDigitalPin(a, 'D7', 1);
+        writeDigitalPin(a, 'D8', 1);
 
     elseif activateRight
         
-        % This must turn ON the pins (or keep the pins ON) that activate
-        % the motors that simulate the right rumble strip.
+        % Turn on pins controlling motors on the right side.
 
-        disp('Right Rumblestrip');
+        fprintf('Vibration on Right Side\n');
+
+        writeDigitalPin(a, 'D12', 1);
+        writeDigitalPin(a, 'D13', 1);
 
     else
         
-        % This must eventually turn off the motors via the Arduino by
-        % turning OFF the corresponding pins.
+        % Turn off all pins controlling the motors
 
-        disp('No Rumblestrip');
+        fprintf('No Vibration\n');
+
+        writeDigitalPin(a, 'D7', 0);
+        writeDigitalPin(a, 'D8', 0);
+        writeDigitalPin(a, 'D12', 0);
+        writeDigitalPin(a, 'D13', 0);
 
     end
 
