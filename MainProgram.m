@@ -1,6 +1,6 @@
 InitializeArduinoConnection
 
-ipAddr = '192.168.4.20';
+ipAddr = 'localhost';
 portNo = 7000;
 
 % Clear everything that could conflict with establishing a UDP connection
