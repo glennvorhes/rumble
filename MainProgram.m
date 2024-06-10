@@ -3,6 +3,14 @@ InitializeArduinoConnection
 ipAddr = 'localhost';
 portNo = 7000;
 
+[yL, FsL] = audioread('Rumble_Left.wav');
+[yR, FsR] = audioread('Rumble_Right.wav');
+
+%sound(yL,FsL);
+%clear sound;
+
+
+
 % Clear everything that could conflict with establishing a UDP connection
 % to listen for data. Once that is done, define the connection.
 
@@ -32,7 +40,7 @@ while 1
         % the road offset position which can be used to determine how close
         % to the edge of the road is the user.
         
-        actionMapper(subjectState.state6, a);
+        actionMapper(subjectState.state6, a, yL, FsL, yR, FsR);
 
     end
 

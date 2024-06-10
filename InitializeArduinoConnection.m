@@ -7,8 +7,8 @@ if exist('a', 'var')
 
     try
         
-        writeDigitalPin(a, 'D13', 1);
-        writeDigitalPin(a, 'D13', 0);
+        writeDigitalPin(a, 'D9', 1);
+        writeDigitalPin(a, 'D9', 0);
 
         connectionActive = true;
 
